@@ -93,6 +93,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ChristianChiarulli/codi.vim'
     " Vim Wiki
     " Plug 'https://github.com/vimwiki/vimwiki.git'
+    " Vim Markdown
+    " Plug 'godlygeek/tabular'
+    " Plug 'plasticboy/vim-markdown'
+    " Vim Markdown Preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    " If you have nodejs and yarn
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   endif
 
 
