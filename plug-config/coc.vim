@@ -5,6 +5,8 @@
     \ 'coc-emmet',
     \ 'coc-pairs',
     \ 'coc-tsserver',
+    \ 'coc-angular',
+    \ 'coc-jest',
     \ 'coc-floaterm',
     \ 'coc-html',
     \ 'coc-css',
@@ -19,6 +21,13 @@
     \ 'coc-xml',
     \ 'coc-yank',
     \ 'coc-json',
+    \ 'coc-rust-analyzer',
+    \ 'coc-rls',
+    \ 'coc-r-lsp',
+    \ 'coc-go',
+    \ 'coc-lua',
+    \ 'coc-groovy',
+    \ 'coc-docker',
     \ 'coc-marketplace',
     \ ]
 
