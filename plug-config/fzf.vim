@@ -50,7 +50,7 @@ command! -bang -nargs=? -complete=dir Files
 " Get text in files with Rg
 " command! -bang -nargs=* Rg
 "   \ call fzf#vim#grep(
-"   \   "rg --column --line-number --no-heading --color=always --smart-case --glob '!.git/**' ".shellescape(<q-args>), 1,
+"   \   "rg --column --line-number --no-heading --color=always --smart-case --glob '!.git/**' ".shellescape(<q-args>), 0,
 
  " Make Ripgrep ONLY search file contents and not filenames
 command! -bang -nargs=* Rg
@@ -78,24 +78,24 @@ command! -bang -nargs=* GGrep
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
 " Git Path
-" let s:git_path = substitute(system("git rev-parse --show-toplevel 2>/dev/null"), '\n', '', '')
+let s:git_path = substitute(system("git rev-parse --show-toplevel 2>/dev/null"), '\n', '', '')
 
-" function! s:ag_git_root(query, ...)
-"   if type(a:query) != type('')
-"     return s:warn('Invalid query argument')
-"   endif
-"   let query = empty(a:query) ? '^(?=.)' : a:query
-"   let args = copy(a:000)
-"   let ag_opts = len(args) > 1 && type(args[0]) == s:TYPE.string ? remove(args, 0) : ''
-"   let command = ag_opts . ' ' . fzf#shellescape(query) . ' ' . s:git_path
-"   return call('fzf#vim#ag_raw', insert(args, command, 0))
-" endfunction
+function! s:ag_git_root(query, ...)
+  if type(a:query) != type('')
+    return s:warn('Invalid query argument')
+  endif
+  let query = empty(a:query) ? '^(?=.)' : a:query
+  let args = copy(a:000)
+  let ag_opts = len(args) > 1 && type(args[0]) == s:TYPE.string ? remove(args, 0) : ''
+  let command = ag_opts . ' ' . fzf#shellescape(query) . ' ' . s:git_path
+  return call('fzf#vim#ag_raw', insert(args, command, 0))
+endfunction
 
-" command! -bang -nargs=* A
-"       \ call s:ag_git_root(<q-args>, <bang>0)
-" command! -bang -nargs=? F
-"       \ call fzf#vim#files(s:git_path, <bang>0)
-" command! -bang -nargs=? -complete=dir Files
-"     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
-" silent! nmap <C-P> :Files<CR>
-" silent! nmap <C-F> :A<CR>
+command! -bang -nargs=* A
+      \ call s:ag_git_root(<q-args>, <bang>0)
+command! -bang -nargs=? F
+      \ call fzf#vim#files(s:git_path, <bang>0)
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
+silent! nmap <C-P> :Files<CR>
+silent! nmap <C-F> :A<CR>
