@@ -1,5 +1,5 @@
 " g Leader key
-let mapleader=" "
+let mapleader=","
 " let localleader=" "
 nnoremap <Space> <Nop>
 
