@@ -39,6 +39,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'junegunn/rainbow_parentheses.vim'
     " Better Syntax Support
+    " That sucker must be done before loading vim_polyglot
+    " let g:polyglot_disabled = ['csv']
     Plug 'sheerun/vim-polyglot'
     " Cool Icons
     Plug 'ryanoasis/vim-devicons'
@@ -101,7 +103,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " If you have nodejs and yarn
     " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
   endif
-
 
 call plug#end()
 
