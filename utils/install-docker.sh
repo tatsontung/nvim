@@ -20,7 +20,7 @@ installnodearch() { \
 installnode() { \
   echo "Installing node..."
   [ "$(uname)" == "Darwin" ] && installnodemac
-  [  ! command -v dconf &> /dev/null ] && installnodedebian
+  [ -n "$(! command -v apt &> /dev/null)" ] && installnodedebian
   [ -f "/etc/arch-release" ] && installnodearch
   [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ] && echo "Windows not currently supported"
   sudo npm i -g neovim
@@ -43,7 +43,7 @@ installpiponarch() { \
 installpip() { \
   echo "Installing pip..."
   [ "$(uname)" == "Darwin" ] && installpiponmac
-  [  -n "$(uname -a | grep Ubuntu)" ] && installpipondebian
+  [  -n "$(! command -v apt &> /dev/null)" ] && installpipondebian
   [ -f "/etc/arch-release" ] && installpiponarch
   [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ] && echo "Windows not currently supported"
 }
@@ -60,7 +60,7 @@ installcocextensions() { \
   [ ! -f package.json ] && echo '{"dependencies":{}}'> package.json
   # Change extension names to the extensions you need
   # sudo npm install coc-explorer coc-snippets coc-json coc-actions --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
-  sudo npm install coc-explorer coc-snippets coc-json coc-actions --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-explorer coc-snippets coc-json coc-actions --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 }
 
 cloneconfig() { \
@@ -122,7 +122,7 @@ installonarch() { \
 
 installextrapackages() { \
   [ "$(uname)" == "Darwin" ] && installonmac
-  [  -n "$(uname -a | grep Ubuntu)" ] && installondebian
+  [  -n "$(! command -v apt &> /dev/null)" ] && installondebian
   [ -f "/etc/arch-release" ] && installonarch
   [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ] && echo "Windows not currently supported"
 }
