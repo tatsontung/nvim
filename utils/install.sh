@@ -7,7 +7,7 @@ installnodemac() { \
   brew install node
 }
 
-installnodeubuntu() { \
+installnodedebian() { \
   sudo apt install nodejs
   sudo apt install npm
 }
@@ -20,7 +20,7 @@ installnodearch() { \
 installnode() { \
   echo "Installing node..."
   [ "$(uname)" == "Darwin" ] && installnodemac
-  [  -n "$(uname -a | grep Ubuntu)" ] && installnodeubuntu
+  [ -n "$(! command -v apt &> /dev/null)" ] && installnodedebian
   [ -f "/etc/arch-release" ] && installnodearch
   [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ] && echo "Windows not currently supported"
   sudo npm i -g neovim
@@ -32,7 +32,7 @@ installpiponmac() { \
   rm get-pip.py
 }
 
-installpiponubuntu() { \
+installpipondebian() { \
   sudo apt install python3-pip > /dev/null
 }
 
@@ -43,7 +43,7 @@ installpiponarch() { \
 installpip() { \
   echo "Installing pip..."
   [ "$(uname)" == "Darwin" ] && installpiponmac
-  [  -n "$(uname -a | grep Ubuntu)" ] && installpiponubuntu
+  [  -n "$(! command -v apt &> /dev/null)" ] && installpipondebian
   [ -f "/etc/arch-release" ] && installpiponarch
   [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ] && echo "Windows not currently supported"
 }
@@ -60,7 +60,7 @@ installcocextensions() { \
   [ ! -f package.json ] && echo '{"dependencies":{}}'> package.json
   # Change extension names to the extensions you need
   # sudo npm install coc-explorer coc-snippets coc-json coc-actions --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
-  sudo npm install coc-explorer coc-snippets coc-json coc-actions --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
+  npm install coc-explorer coc-snippets coc-json coc-actions --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod
 }
 
 cloneconfig() { \
@@ -106,7 +106,7 @@ pipinstallueberzug() { \
   which pip3 > /dev/null && pip3 install ueberzug || echo "Not installing ueberzug pip not found"
 }
 
-installonubuntu() { \
+installondebian() { \
   sudo apt install ripgrep fzf ranger  
   sudo apt install libjpeg8-dev zlib1g-dev python-dev python3-dev libxtst-dev
   pip3 install ueberzug
@@ -122,7 +122,7 @@ installonarch() { \
 
 installextrapackages() { \
   [ "$(uname)" == "Darwin" ] && installonmac
-  [  -n "$(uname -a | grep Ubuntu)" ] && installonubuntu
+  [  -n "$(! command -v apt &> /dev/null)" ] && installondebian
   [ -f "/etc/arch-release" ] && installonarch
   [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ] && echo "Windows not currently supported"
 }
