@@ -15,8 +15,8 @@ nmap <S-Tab> :Tabprev<CR>
 
 else
   " Better nav for omnicomplete
-  inoremap <expr> <c-j> ("\<C-n>")
-  inoremap <expr> <c-k> ("\<C-p>")
+  inoremap <expr> <C-j> ("\<C-n>")
+  inoremap <expr> <C-k> ("\<C-p>")
 
   " I hate escape more than anything else
   inoremap jk <Esc>
