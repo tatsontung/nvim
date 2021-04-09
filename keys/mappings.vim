@@ -1,7 +1,11 @@
-" g Leader key
+"g Leader key
 let mapleader=","
-" let localleader=" "
+let localleader=";"
 nnoremap <Space> <Nop>
+
+" Search
+nmap <leader>s  :%s/
+vmap <leader>s  :s/
 
 " Better indenting
 vnoremap < <gv
@@ -10,8 +14,11 @@ vnoremap > >gv
 if exists('g:vscode')
 
 " Simulate same TAB behavior in VSCode
-nmap <Tab> :Tabnext<CR>
-nmap <S-Tab> :Tabprev<CR>
+nnoremap <Tab> :Tabnext<CR>
+nnoremap <S-Tab> :Tabprev<CR>
+" CTRL-W will delete the current buffer
+nnoremap <silent> <C-w> :bdelete<CR>
+
 
 else
   " Better nav for omnicomplete

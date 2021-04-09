@@ -7,4 +7,6 @@ autoload/plugged/*
 paths.vim
 session
 wiki/
+*.iml
+.idea
 
