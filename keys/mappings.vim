@@ -16,9 +16,8 @@ if exists('g:vscode')
 " Simulate same TAB behavior in VSCode
 nnoremap <Tab> :Tabnext<CR>
 nnoremap <S-Tab> :Tabprev<CR>
-" CTRL-W will delete the current buffer
-nnoremap <silent> <C-w> :bdelete<CR>
-
+" SHIFT-W will delete the current buffer
+nnoremap <silent> <S-W> :bdelete<CR>
 
 else
   " Better nav for omnicomplete
