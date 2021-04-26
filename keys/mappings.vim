@@ -13,11 +13,11 @@ vnoremap > >gv
 
 if exists('g:vscode')
 
-" Simulate same TAB behavior in VSCode
-nnoremap <Tab> :Tabnext<CR>
-nnoremap <S-Tab> :Tabprev<CR>
-" SHIFT-W will delete the current buffer
-nnoremap <silent> <S-W> :bdelete<CR>
+  " Simulate same TAB behavior in VSCode
+  nnoremap <Tab> :Tabnext<CR>
+  nnoremap <S-Tab> :Tabprev<CR>
+  " SHIFT-W will delete the current buffer
+  nnoremap <silent> <S-W> :bdelete<CR>
 
 else
   " Better nav for omnicomplete
@@ -33,9 +33,9 @@ else
   " nnoremap <c-u> viwU<Esc>
 
   " TAB in general mode will move to text buffer
-  nnoremap <silent> <TAB> :bnext<CR>
+  " nnoremap <silent> <TAB> :bnext<CR>
   " SHIFT-TAB will go back
-  nnoremap <silent> <S-TAB> :bprevious<CR>
+  " nnoremap <silent> <S-TAB> :bprevious<CR>
 
   " Move selected line / block of text in visual mode
   " shift + k to move up
@@ -74,5 +74,12 @@ else
   nnoremap <silent> <M-k>    :resize +2<CR>
   nnoremap <silent> <M-h>    :vertical resize -2<CR>
   nnoremap <silent> <M-l>    :vertical resize +2<CR>
+  " Navigation with buffer
+  " TAB in general mode will move to text buffer
+  nnoremap <silent> <C-]> :bnext<CR>
+  " SHIFT-TAB will go back
+  nnoremap <silent> <C-[> :bprevious<CR>
+  " Leader q will delete the current buffer
+  nnoremap <silent> <C-q> :bdelete<CR>
 endif
 
