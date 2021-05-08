@@ -7,10 +7,6 @@ nnoremap <Space> <Nop>
 nmap <leader>s  :%s/
 vmap <leader>s  :s/
 
-" Better indenting
-vnoremap < <gv
-vnoremap > >gv
-
 if exists('g:vscode')
 
   " Simulate same TAB behavior in VSCode
@@ -20,6 +16,7 @@ if exists('g:vscode')
   nnoremap <silent> <S-W> :bdelete<CR>
 
 else
+
   " Better nav for omnicomplete
   inoremap <expr> <C-j> ("\<C-n>")
   inoremap <expr> <C-k> ("\<C-p>")
@@ -81,5 +78,17 @@ else
   nnoremap <silent> <C-[> :bprevious<CR>
   " Leader q will delete the current buffer
   nnoremap <silent> <C-q> :bdelete<CR>
+
+  " Better indenting
+  vnoremap < <gv
+  vnoremap > >gv
+
+  " Fzf Mapping
+  noremap <C-b> :Buffers<CR>
+  nnoremap <C-f> :Files<CR>
+
+  " Select all
+  nmap <C-a> gg<S-v>G
+
 endif
 
