@@ -1,3 +1,4 @@
-" nnoremap <silent> <C-/> :Commentary<CR>
-vnoremap <silent> <space>/ :Commentary<CR>
-autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */}
+" Comment/uncomment lines
+map <leader>/ <plug>NERDCommenterToggle
+nmap <C-_>   <Plug>NERDCommenterToggle
+vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
