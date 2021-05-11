@@ -33,7 +33,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   else
     " Text Navigation
     Plug 'terryma/vim-multiple-cursors'
-    Plug 'easymotion/vim-easymotion'
     " Add some color
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'junegunn/rainbow_parentheses.vim'
