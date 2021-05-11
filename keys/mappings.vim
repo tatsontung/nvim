@@ -7,89 +7,76 @@ nnoremap <Space> <Nop>
 nmap <leader>s  :%s/
 vmap <leader>s  :s/
 
-if exists('g:vscode')
+" Better nav for omnicomplete
+inoremap <expr> <C-j> ("\<C-n>")
+inoremap <expr> <C-k> ("\<C-p>")
 
-  " Simulate same TAB behavior in VSCode
-  nnoremap <Tab> :Tabnext<CR>
-  nnoremap <S-Tab> :Tabprev<CR>
-  " SHIFT-W will delete the current buffer
-  nnoremap <silent> <S-W> :bdelete<CR>
+" I hate escape more than anything else
+inoremap jk <Esc>
+inoremap kj <Esc>
 
-else
+" Easy CAPS
+" inoremap <c-u> <ESC>viwUi
+" nnoremap <c-u> viwU<Esc>
 
-  " Better nav for omnicomplete
-  inoremap <expr> <C-j> ("\<C-n>")
-  inoremap <expr> <C-k> ("\<C-p>")
+" TAB in general mode will move to text buffer
+" nnoremap <silent> <TAB> :bnext<CR>
+" SHIFT-TAB will go back
+" nnoremap <silent> <S-TAB> :bprevious<CR>
 
-  " I hate escape more than anything else
-  inoremap jk <Esc>
-  inoremap kj <Esc>
+" Move selected line / block of text in visual mode
+" shift + k to move up
+" shift + j to move down
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
 
-  " Easy CAPS
-  " inoremap <c-u> <ESC>viwUi
-  " nnoremap <c-u> viwU<Esc>
+" Alternate way to save
+nnoremap <silent> <C-s> :w<CR>
+" Alternate way to quit
+nnoremap <silent> <C-Q> :wq!<CR>
+" Use control-c instead of escape
+nnoremap <silent> <C-c> <Esc>
+" <TAB>: completion.
+inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-  " TAB in general mode will move to text buffer
-  " nnoremap <silent> <TAB> :bnext<CR>
-  " SHIFT-TAB will go back
-  " nnoremap <silent> <S-TAB> :bprevious<CR>
+" Better window navigation
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
-  " Move selected line / block of text in visual mode
-  " shift + k to move up
-  " shift + j to move down
-  xnoremap K :move '<-2<CR>gv-gv
-  xnoremap J :move '>+1<CR>gv-gv
+" Terminal window navigation
+" tnoremap <C-h> <C-\><C-N><C-w>h
+" tnoremap <C-j> <C-\><C-N><C-w>j
+" tnoremap <C-k> <C-\><C-N><C-w>k
+" tnoremap <C-l> <C-\><C-N><C-w>l
+" inoremap <C-h> <C-\><C-N><C-w>h
+" inoremap <C-j> <C-\><C-N><C-w>j
+" inoremap <C-k> <C-\><C-N><C-w>k
+" inoremap <C-l> <C-\><C-N><C-w>l
+" tnoremap <Esc> <C-\><C-n>
 
-  " Alternate way to save
-  nnoremap <silent> <C-s> :w<CR>
-  " Alternate way to quit
-  nnoremap <silent> <C-Q> :wq!<CR>
-  " Use control-c instead of escape
-  nnoremap <silent> <C-c> <Esc>
-  " <TAB>: completion.
-  inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" Use alt + hjkl to resize windows
+nnoremap <silent> <M-j>    :resize -2<CR>
+nnoremap <silent> <M-k>    :resize +2<CR>
+nnoremap <silent> <M-h>    :vertical resize -2<CR>
+nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
-  " Better window navigation
-  " nnoremap <C-h> <C-w>h
-  " nnoremap <C-j> <C-w>j
-  " nnoremap <C-k> <C-w>k
-  " nnoremap <C-l> <C-w>l
+" Navigation with buffer
+" TAB in general mode will move to text buffer
+nnoremap <silent> <C-]> :bnext<CR>
+" SHIFT-TAB will go back
+nnoremap <silent> <C-[> :bprevious<CR>
+" Leader q will delete the current buffer
+nnoremap <silent> <S-W> :bdelete<CR>
 
-  " Terminal window navigation
-  " tnoremap <C-h> <C-\><C-N><C-w>h
-  " tnoremap <C-j> <C-\><C-N><C-w>j
-  " tnoremap <C-k> <C-\><C-N><C-w>k
-  " tnoremap <C-l> <C-\><C-N><C-w>l
-  " inoremap <C-h> <C-\><C-N><C-w>h
-  " inoremap <C-j> <C-\><C-N><C-w>j
-  " inoremap <C-k> <C-\><C-N><C-w>k
-  " inoremap <C-l> <C-\><C-N><C-w>l
-  " tnoremap <Esc> <C-\><C-n>
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
 
-  " Use alt + hjkl to resize windows
-  nnoremap <silent> <M-j>    :resize -2<CR>
-  nnoremap <silent> <M-k>    :resize +2<CR>
-  nnoremap <silent> <M-h>    :vertical resize -2<CR>
-  nnoremap <silent> <M-l>    :vertical resize +2<CR>
+" Fzf Mapping
+noremap <C-b> :Buffers<CR>
+nnoremap <C-f> :Files<CR>
 
-  " Navigation with buffer
-  " TAB in general mode will move to text buffer
-  nnoremap <silent> <C-]> :bnext<CR>
-  " SHIFT-TAB will go back
-  nnoremap <silent> <C-[> :bprevious<CR>
-  " Leader q will delete the current buffer
-  nnoremap <silent> <S-W> :bdelete<CR>
-
-  " Better indenting
-  vnoremap < <gv
-  vnoremap > >gv
-
-  " Fzf Mapping
-  noremap <C-b> :Buffers<CR>
-  nnoremap <C-f> :Files<CR>
-
-  " Select all
-  nmap <C-a> gg<S-v>G
-
-endif
-
+" Select all
+nmap <C-a> gg<S-v>G
