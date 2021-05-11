@@ -26,29 +26,12 @@ else
   source $HOME/.config/nvim/plug-config/fzf.vim
   source $HOME/.config/nvim/plug-config/nerd-commenter.vim
   source $HOME/.config/nvim/plug-config/rainbow.vim
-  source $HOME/.config/nvim/plug-config/codi.vim
-  source $HOME/.config/nvim/plug-config/quickscope.vim
-  " source $HOME/.config/nvim/plug-config/vim-wiki.vim
-  source $HOME/.config/nvim/plug-config/sneak.vim
   source $HOME/.config/nvim/plug-config/coc.vim
-  source $HOME/.config/nvim/plug-config/goyo.vim
   source $HOME/.config/nvim/plug-config/vim-rooter.vim
   source $HOME/.config/nvim/plug-config/start-screen.vim
   source $HOME/.config/nvim/plug-config/gitgutter.vim
   source $HOME/.config/nvim/plug-config/closetags.vim
   source $HOME/.config/nvim/plug-config/floaterm.vim
-  "source $HOME/.config/nvim/plug-config/vista.vim
   luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-  " source $HOME/.config/nvim/plug-config/easymotion.vim
+  source $HOME/.config/nvim/plug-config/easymotion.vim
 endif
-
-" Experimental
-
-if !empty(glob("./paths.vim"))
-  source $HOME/.config/nvim/paths.vim
-endif
-
-" Python
-" https://realpython.com/python-debugging-pdb/ " breakpoint syntax is really cool
-" also look into profiling as well
-" let g:python_highlight_all=1

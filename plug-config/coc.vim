@@ -7,7 +7,6 @@
     \ 'coc-tsserver',
     \ 'coc-angular',
     \ 'coc-jest',
-    \ 'coc-floaterm',
     \ 'coc-html',
     \ 'coc-css',
     \ 'coc-emoji',

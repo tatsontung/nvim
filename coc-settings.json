@@ -64,7 +64,7 @@
   "explorer.icon.enableVimDevicons": false,
   "explorer.keyMappings": {
     "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit"
+    "<C-v>": "open:vsplit"
   },
 
   "languageserver": {
