@@ -13,7 +13,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/which-key.vim
 
 source $HOME/.config/nvim/themes/syntax.vim
-source $HOME/.config/nvim/themes/gruvbox.vim
+source $HOME/.config/nvim/themes/editor.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/fzf.vim

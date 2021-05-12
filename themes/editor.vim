@@ -1,7 +1,7 @@
 hi Comment cterm=italic
 
 syntax on
-colorscheme gruvbox
+colorscheme dracula
 set background=dark
 
 " checks if your terminal has 24-bit color support

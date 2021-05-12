@@ -49,6 +49,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'gruvbox-community/gruvbox'
+    Plug 'dracula/vim', { 'as': 'dracula' }
     " Intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Status Line
