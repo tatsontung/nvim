@@ -30,12 +30,10 @@ function! StartifyEntryFormat()
     endfunction
 
 let g:startify_bookmarks = [
-            \ { 'c': '~/.config/i3/config' },
+            \ { 'c': '~/.config/nvim/mappings.vim' },
             \ { 'i': '~/.config/nvim/init.vim' },
             \ { 'z': '~/.zshrc' },
-            \ '~/Blog',
-            \ '~/Code',
-            \ '~/Pics',
+            \ '~/workspace',
             \ ]
 
 let g:startify_enable_special = 0
