@@ -25,4 +25,4 @@ source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/gitgutter.vim
 source $HOME/.config/nvim/plug-config/closetags.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
-luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+"luafile $HOME/.config/nvim/lua/plug-colorizer.lua

@@ -26,66 +26,63 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " auto set indent settings
   "Plug 'tpope/vim-sleuth'
 
-  if exists('g:vscode')
-    " Easy motion for VSCode
-    Plug 'asvetliakov/vim-easymotion'
+  " Text Navigation
+  Plug 'terryma/vim-multiple-cursors'
+  " Add some color
+  "Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'lilydjwg/colorizer'
 
-  else
-    " Text Navigation
-    Plug 'terryma/vim-multiple-cursors'
-    " Add some color
-    Plug 'norcalli/nvim-colorizer.lua'
-    Plug 'junegunn/rainbow_parentheses.vim'
-    " Better Syntax Support
-    " That sucker must be done before loading vim_polyglot
-    " let g:polyglot_disabled = ['csv']
-    Plug 'sheerun/vim-polyglot'
-    " Cool Icons
-    Plug 'ryanoasis/vim-devicons'
-    Plug 'yazgoo/unicodemoji'
-    " Auto pairs for '(' '[' '{' 
-    Plug 'jiangmiao/auto-pairs'
-    " Closetags
-    Plug 'alvan/vim-closetag'
-    " Themes
-    Plug 'gruvbox-community/gruvbox'
-    Plug 'dracula/vim', { 'as': 'dracula' }
-    " Intellisense
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Status Line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    " Ranger
-    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-    " FZF
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    " Git
-    Plug 'airblade/vim-gitgutter'
-    " Terminal
-    Plug 'voldikss/vim-floaterm'
-    " Start Screen
-    Plug 'mhinz/vim-startify'
-    " See what keys do like in emacs
-    Plug 'liuchengxu/vim-which-key'
-    " Making stuff
-    Plug 'neomake/neomake'
-    " Snippets
-    Plug 'honza/vim-snippets'
-    Plug 'mattn/emmet-vim'
-    " Vim Markdown
-    " Plug 'godlygeek/tabular'
-    " Plug 'plasticboy/vim-markdown'
-    " Vim Markdown Preview
-    "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-    " If you have nodejs and yarn
-    " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-  endif
+  Plug 'junegunn/rainbow_parentheses.vim'
+  " Better Syntax Support
+  " That sucker must be done before loading vim_polyglot
+  " let g:polyglot_disabled = ['csv']
+  Plug 'sheerun/vim-polyglot'
+  " Cool Icons
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'yazgoo/unicodemoji'
+  " Auto pairs for '(' '[' '{' 
+  Plug 'jiangmiao/auto-pairs'
 
-call plug#end()
+  " Closetags
+  Plug 'alvan/vim-closetag'
+  " Themes
+  Plug 'gruvbox-community/gruvbox'
+  Plug 'dracula/vim', { 'as': 'dracula' }
+  " Intellisense
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Status Line
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  " Ranger
+  Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+  " FZF
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+  " Git
+  Plug 'airblade/vim-gitgutter'
+  " Terminal
+  Plug 'voldikss/vim-floaterm'
+  " Start Screen
+  Plug 'mhinz/vim-startify'
+  " See what keys do like in emacs
+  Plug 'liuchengxu/vim-which-key'
+  " Making stuff
+  Plug 'neomake/neomake'
+  " Snippets
+  Plug 'honza/vim-snippets'
+  Plug 'mattn/emmet-vim'
+  " Vim Markdown
+  " Plug 'godlygeek/tabular'
+  " Plug 'plasticboy/vim-markdown'
+  " Vim Markdown Preview
+  "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  " If you have nodejs and yarn
+  " Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
-" Automatically install missing plugins on startup
-autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+  call plug#end()
+
+  " Automatically install missing plugins on startup
+  autocmd VimEnter *
+        \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+        \|   PlugInstall --sync | q
+        \| endif
