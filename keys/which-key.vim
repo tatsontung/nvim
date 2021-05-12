@@ -1,4 +1,4 @@
-" Map leader to which_key
+" Map Space Key to which_key + Leader key
 nnoremap <silent> <Space> :silent <c-u> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <Space> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
