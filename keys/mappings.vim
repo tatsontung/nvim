@@ -57,20 +57,12 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " Navigation with buffer
-" TAB in general mode will move to text buffer
-nnoremap <silent> <C-]> :bnext<CR>
-" SHIFT-TAB will go back
-nnoremap <silent> <C-[> :bprevious<CR>
-" Leader q will delete the current buffer
-nnoremap <silent> <S-W> :bdelete<CR>
+nnoremap <silent> <leader>] :bnext<CR>
+nnoremap <silent> <leader>[ :bprevious<CR>
 
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
-
-" Fzf Mapping
-noremap <C-b> :Buffers<CR>
-nnoremap <C-f> :Files<CR>
 
 " Select all
 nmap <C-a> gg<S-v>G

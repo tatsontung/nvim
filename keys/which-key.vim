@@ -1,12 +1,15 @@
 " Map Space Key to which_key + Leader key
-nnoremap <silent> <Space> :silent <c-u> :silent WhichKey '<Space>'<CR>
-vnoremap <silent> <Space> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
+nnoremap <silent> <Space> :silent <c-u> :silent WhichKey ','<CR>
+vnoremap <silent> <Space> :silent <c-u> :silent WhichKeyVisual ','<CR>
+
+" Register which key map
+call which_key#register(',', "g:which_key_map")
 
 " Create map to add keys to
 let g:which_key_map =  {}
 " Define a separator
 let g:which_key_sep = '→'
-" set timeoutlen=100
+set timeoutlen=100
 
 
 " Not a fan of floating windows for this
@@ -182,5 +185,4 @@ let g:which_key_map.t = {
       \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
-" Register which key map
-call which_key#register('<Space>', "g:which_key_map")
+

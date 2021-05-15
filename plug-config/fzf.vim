@@ -11,12 +11,12 @@ let g:fzf_action = {
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_buffers_jump = 1
 
-map <C-f> :Files<CR>
-" map <leader>b :Buffers<CR>
+" Fzf Mapping
+noremap <C-b> :Buffers<CR>
+nnoremap <C-f> :Files<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>m :Marks<CR>
-
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color
@@ -97,5 +97,3 @@ command! -bang -nargs=? F
       \ call fzf#vim#files(s:git_path, <bang>0)
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
-silent! nmap <C-P> :Files<CR>
-silent! nmap <C-F> :A<CR>

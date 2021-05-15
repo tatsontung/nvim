@@ -58,8 +58,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " FZF
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
   " Git
   Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
   " Terminal
   Plug 'voldikss/vim-floaterm'
   " Start Screen
