@@ -3,6 +3,7 @@ syntax on
 set t_Co=256                            " Support 256 colors
 set background=dark
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 " checks if your terminal has 24-bit color support
 if (has("termguicolors"))
