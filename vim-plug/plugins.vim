@@ -22,7 +22,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Plug 'tpope/vim-commentary'
   Plug 'preservim/nerdcommenter'
   " Have the file system follow you around
-  "Plug 'airblade/vim-rooter'
+  Plug 'airblade/vim-rooter'
   " auto set indent settings
   "Plug 'tpope/vim-sleuth'
 
