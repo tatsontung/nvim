@@ -81,7 +81,9 @@ return require("packer").startup(
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
+        use {"hoob3rt/lualine.nvim", opt = true}
         use {"romgrk/barbar.nvim", opt = true}
+        use {'akinsho/nvim-bufferline.lua', opt = true}
 
         require_plugin("nvim-lspconfig")
         require_plugin("lspsaga.nvim")
@@ -105,6 +107,8 @@ return require("packer").startup(
         require_plugin("nvcode-color-schemes.vim")
         require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
-        require_plugin("barbar.nvim")
+        -- require_plugin("lualine.nvim")
+        require_plugin("nvim-bufferline.lua")
+        -- require_plugin("barbar.nvim")
     end
 )
