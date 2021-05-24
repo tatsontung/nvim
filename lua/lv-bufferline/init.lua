@@ -1,11 +1,11 @@
 -- define some colors
 
-local bar_fg = "#282C34"
-local activeBuffer_fg = "#282C34"
+local bar_fg = "#565c64"
+local activeBuffer_fg = "#c8ccd4"
 
 require "bufferline".setup {
     options = {
-        offsets = {{filetype = "NvimTree", text = "Explorer"}},
+        offsets = {{filetype = "NvimTree", text = "Explorer", highlight = "Directory"}},
         buffer_close_icon = "",
         modified_icon = "",
         close_icon = " ",
@@ -19,7 +19,7 @@ require "bufferline".setup {
         view = "multiwindow",
         show_buffer_close_icons = true,
         separator_style = "thin",
-        mappings = "true"
+        mappings = true
     },
     -- bar colors!!
     highlights = {
@@ -29,12 +29,12 @@ require "bufferline".setup {
         },
         background = {
             guifg = bar_fg,
-            guibg = "#ABB2BF"
+            guibg = "#252931"
         },
         -- buffer
         buffer_selected = {
             guifg = activeBuffer_fg,
-            guibg = "#98C379",
+            guibg = "#1e222a",
             gui = "bold"
         },
         buffer_visible = {
@@ -63,6 +63,12 @@ require "bufferline".setup {
             guifg = "#1e222a",
             guibg = "#1e222a"
         },
+        info_selected = {
+                guifg = activeBuffer_fg,
+                guibg = "#BF616A",
+                gui = "bold,italic",
+                guisp = "BF616A" 
+            },
         separator_visible = {
             guifg = "#252931",
             guibg = "#252931"

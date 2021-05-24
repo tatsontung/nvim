@@ -49,6 +49,9 @@ return require("packer").startup(
         -- Debugging
         use {"mfussenegger/nvim-dap", opt = true}
 
+        -- Terminal
+        use {"s1n7ax/nvim-terminal", opt = true}
+
         -- Autocomplete
         use {"hrsh7th/nvim-compe", opt = true}
         use {"hrsh7th/vim-vsnip", opt = true}
@@ -74,10 +77,8 @@ return require("packer").startup(
 
         -- Color
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
-        use {"dracula/vim", opt = true}
-
-        -- Icons
-        use {"kyazdani42/nvim-web-devicons", opt = true}
+        use {'norcalli/nvim-colorizer.lua', opt = true} -- colorizer hash code
+        use {"kyazdani42/nvim-web-devicons", opt = true} -- icons
 
         -- Status Line and Bufferline
         use {"glepnir/galaxyline.nvim", opt = true}
@@ -92,6 +93,7 @@ return require("packer").startup(
         require_plugin("popup.nvim")
         require_plugin("plenary.nvim")
         require_plugin("telescope.nvim")
+        require_plugin("nvim-terminal")
         require_plugin("nvim-dap")
         require_plugin("nvim-compe")
         require_plugin("vim-vsnip")
@@ -105,6 +107,7 @@ return require("packer").startup(
         require_plugin("nvim-comment")
         require_plugin("nvim-bqf")
         require_plugin("nvcode-color-schemes.vim")
+        require_plugin("nvim-colorizer.lua")
         require_plugin("nvim-web-devicons")
         require_plugin("galaxyline.nvim")
         -- require_plugin("lualine.nvim")
