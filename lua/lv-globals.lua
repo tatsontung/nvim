@@ -71,7 +71,7 @@ O = {
 '              `.   .   .\'  | |__| |_| | | | | (_| | |   \\ V / | | | | | | |',
 '                `-...-\'    |_____\\__,_|_| |_|\\__,_|_|    \\_/  |_|_| |_| |_|',
 		},
-		footer= {'chrisatmachine.com'}
+		footer= {'Neovim with major Lua scripts'}
 	}
 }
 
