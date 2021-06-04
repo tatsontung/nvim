@@ -2,7 +2,7 @@ O = {
     hidden_files = true,
     number = true,
     relative_number = true,
-    shell = 'bash',
+    shell = 'zsh',
     nvim_tree_disable_netrw = 0, -- "1 by default, disables netrw (must be set before plugin's packadd)
 
     -- @usage pass a table with your desired languages
