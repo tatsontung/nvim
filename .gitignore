@@ -12,6 +12,7 @@ session
 wiki/
 pack/
 utils/java/*
+lv-config.lua
 lua-language-server/
 eclipse.jdt.ls/
 .language-servers/
@@ -19,3 +20,5 @@ eclipse.jdt.ls/
 spell/
 nv-settings.lua
 lv-settings.lua
+.stylua.toml
+lua/lv-user-config/
