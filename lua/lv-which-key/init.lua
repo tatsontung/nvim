@@ -61,25 +61,16 @@ local opts = {
   nowait = false, -- use `nowait` when creating keymaps
 }
 
--- Set fast edit and reload config file
-vim.api.nvim_set_keymap('n', '<leader>cf', ':tabedit $MYVIMRC<CR>', {})
-vim.api.nvim_set_keymap('n', '<leader>rv', ':source $MYVIMRC<CR>', {})
-
 -- no hl
 vim.api.nvim_set_keymap("n", "<Leader>h", ':let @/=""<CR>', { noremap = true, silent = true })
 
 -- explorer
-
 vim.api.nvim_set_keymap(
   "n",
   "<Leader>e",
   ":lua require'lv-nvimtree'.toggle_tree()<CR>",
   { noremap = true, silent = true }
 )
-
-vim.api.nvim_set_keymap("n", "<Leader>f", ":Telescope find_files<CR>", { noremap = true, silent = true })
--- terminal
-vim.api.nvim_set_keymap('n', '<leader>t', ':lua terminal:toggle()<CR>', {noremap = true, silent = true})
 
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
